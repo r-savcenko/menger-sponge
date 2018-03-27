@@ -1,7 +1,7 @@
 include <vars.scad>;
 use <base.scad>;
 
-module some(ITERATION) {
+module iterate(ITERATION) {
     KOEF = BASE_SIZE * pow(3, ITERATION - 1);
     union() {
         for(I=[0:len(OBJECT_MATRIX) - 1]) {
@@ -21,4 +21,4 @@ module some(ITERATION) {
     }
 }
 
-some(2) some(1) base();
+iterate(2) iterate(1) base();
